@@ -1,0 +1,513 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#navbar{
+  /*border-color: pink; 
+  border-width: 2px;
+  background-color: rgb(77, 55, 55); */
+  min-height: 3em;
+  text-align: center;
+  padding-top:0.5em;
+}
+
+.navElement{
+  display:inline;
+  padding-right: 3em;
+  cursor: pointer;
+  /*border-color:aquamarine;
+  border-width: 2px;*/
+}
+
+.navElement:hover {
+  text-decoration: underline;
+}
+
+/* Login, Register, and Forgot Password? Page */
+#loginPage{
+  color: black;
+  padding: 10px;
+}
+
+#loginHeader{
+  text-align: center;
+  margin-bottom: 20px; 
+  font-size: 24px;
+}
+
+#loginBody{
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#loginEmail, #loginPassword{
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+#loginButton{
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: blue;
+  color: white;
+  cursor: pointer;
+}
+
+.buttonStyle {
+  margin-top: 10px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: blue;
+  color: white;
+  font-weight: bold;
+  cursor: pointer
+}
+
+#loginButton:hover, .buttonStyle:hover {
+  background-color: rgb(0, 0, 214);
+}
+
+#startPlanning{
+  border-color:lightblue;
+  border-width: 2px;
+  min-width: fit-content;
+  background-color: rgba(0, 0, 255, 0.70);
+}
+
+#userPageBody{
+  text-align:center;
+}
+
+#userPageBody h1{
+  font-size: 36px;
+  color: black;
+}
+
+#userPageBody button{
+  font-size: 24px;
+}
+
+.spacer{
+  padding-right:8%;
+}
+
+#registerLink{
+  font-style: italic;
+  color: blue;
+}
+
+#registerLink:hover {
+  text-decoration: underline;
+}
+
+#forgotPasswordLink {
+  text-align: right;
+}
+
+#loginLabel {
+  text-align: left;
+}
+
+/* Checkout Page Form */
+#checkoutForm{
+  color:black;
+}
+
+.cardInput {
+  display: block;
+  width: 100%;
+  padding: 6px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+/* Pop-Up Card CSS */
+ .overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(128, 128, 128, 0.732);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: scroll;
+}
+
+ .userOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(128, 128, 128, 0.732);
+  z-index: 9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: scroll;
+}
+
+.userPopUpCard {
+    position: relative;
+    padding: 32px;
+    margin-top: 170px;
+    width: 40%;
+    min-height: 50%;
+    height: auto;
+    background-color: white;
+    border-radius: 5px;
+    padding-bottom: 50px;
+}
+
+@media screen and (max-width: 909px) {
+
+  .popUpCard {
+    margin-top: auto;
+    margin-bottom: 0px;
+  }
+
+  /* Cabin Options */
+  .option {
+    border: solid blue 1px;
+    border-radius: 5px;
+    display: inline-block;
+    min-width: 100%;
+    cursor: pointer;
+    margin: 5px;
+  }
+
+  .cabinOptions {
+    margin-top: 2px;  
+  }
+
+  .price {
+    text-align: right;
+    position: relative;
+    left: -10px;
+    bottom: 3px;
+  }
+
+  /* Border for room images */
+  .roomBorder {
+    border-right: solid grey 1px;
+    display: inline-block;
+  }
+
+  /* Images for hotel rooms */
+  .roomImg {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    margin-bottom: -7px;
+    min-width: 300px;
+    max-width: 300px;
+    min-height: 200%;
+    max-height: 100%;
+  }
+
+  .roomInfo {
+    display: inline-block;
+    padding-left: 7px;
+    padding-top: 3px;
+    position: relative;
+  }
+}
+
+@media screen and (min-width: 601px) {
+  /* Pop-Up Card */
+  .popUpCard {
+    position: relative;
+    padding: 32px;
+    margin-top: 170px;
+    margin-bottom: 100px;
+    min-width: 80%;
+    max-width: 50%;
+    background-color: white;
+    border-radius: 5px;
+    padding-bottom: 90px;
+  }
+
+  .selectBtn {
+    border-radius: 40px;
+    padding: 10px;
+    background-color: rgba(0, 0, 255, 0.478);
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+
+  /* Pop-Up Card */
+  .popUpCard {
+    position: relative;
+    padding: 32px;
+    margin-top: 170px;
+    width: 100%;
+    background-color: white;
+    border-radius: 5px;
+    padding-bottom: 100px;
+  }
+
+  .selectBtn {
+    border-radius: 40px;
+    padding: 10px;
+    background-color: rgba(0, 0, 255, 0.478);
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+  }
+
+  .price {
+    text-align: right;
+    position: relative;
+    left: 118px;
+    bottom: -14px;
+  }
+
+  /* Border for room images */
+  .roomBorder {
+    border-bottom: solid grey 1px;
+    min-height: 100%;
+    max-height: 100%;
+  }
+
+  /* Images for hotel rooms */
+  .roomImg {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    display: inline;
+    margin-top: -42px;
+    margin-bottom: -7px;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 95px;
+    max-height: 95px;
+  }
+
+  .roomInfo {
+    padding-left: 7px;
+    padding-top: 3px;
+    position: relative;
+  }
+
+}
+
+@media screen and (min-width: 910px) {
+  /* Cabin Options */
+  .option {
+    border: solid blue 1px;
+    border-radius: 5px;
+    display: inline-block;
+    width: 200px;
+    min-width: 200px;
+    max-width: 500px;
+    height: 200px;
+    cursor: pointer;
+    margin: 5px;
+  }
+
+  .cabinOptions {
+    margin-top: 5px;  
+    display: flex;
+    justify-content: center;
+  }
+
+  .price {
+    position: relative;
+    top: 12px;
+  }
+
+  .selectBtn {
+    border-radius: 40px;
+    padding: 10px;
+    background-color: rgba(0, 0, 255, 0.478);
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+  }
+
+  /* Border for room images */
+  .roomBorder {
+    border-bottom: solid grey 1px;
+  }
+
+  /* Images for hotel rooms */
+  .roomImg {
+    display: inline-block;
+    min-width: 100%;
+    min-height: 105px;
+    max-height: 105px;
+  }
+
+  .roomInfo {
+    padding-left: 7px;
+    padding-top: 3px;
+  }
+}
+
+.closePopUp {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  padding: 2px;
+  width: 25px;
+  cursor: pointer;
+}
+
+.option:hover {
+  box-shadow: 5px 5px 20px grey;
+}
+
+/* When a cabin/bed type is selected */
+.selectedOption {
+  border: solid blue 3px;
+}
+
+.selectBtn:hover {
+  box-shadow: 5px 10px 20px grey;
+  background-color: blue;
+}
+
+.selectBtn:disabled {
+  box-shadow: 0px 0px;
+  background-color: rgb(166, 161, 161);
+  cursor: default;
+}
+
+/* Slogan on Main Page */
+.outerSlogan {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.outerSlogan h1 {
+  font-size: 70px;
+  margin: 0px;
+  color: black;
+}
+
+.innerSlogan {
+  border: 0px solid #ddd;
+  height: 50px;
+  line-height: 50px;
+  font-size: 35px;
+  overflow: hidden;
+}
+
+.innerSlogan span {
+  position: relative;
+  color: rgb(37, 99, 235);
+  animation: animation 15s ease infinite;
+}
+
+/* Animates the revolving text on the home page */
+@keyframes animation {
+  0%,
+  100% { top: 0; }
+  20% { top: 0; }
+  25% { top: -50px; }
+  45% { top: -50px; }
+  50% { top: -100px; }
+  70% { top: -100px; }
+  75% { top: -150px; }
+  95% { top: -150px; }
+}
+
+/* Places the button in the middle of the home card */
+.verticalButton {
+  margin: 0;
+  position: absolute;
+  top: 45%;
+  left: 40%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/* Footer Styling */
+
+footer {
+  background-color: rgba(255, 255, 255, 0.952);
+  width: 100%;
+  padding: 3px;
+  text-align: center;
+}
+
+#facebook {
+  width: 50px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#twitter {
+  width: 50px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#instagram {
+  width: 50px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#contactUs {
+  color:dodgerblue;
+  font-weight: bold;
+}
+
+#contactUs:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  color: black;
+  text-align: center;
+  padding:  10px 0;
+}
